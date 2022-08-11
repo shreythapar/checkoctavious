@@ -1,0 +1,49 @@
+﻿.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+}
+
+.reveal-if-active {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+
+input[type="radio"]:checked ~ .reveal-if-active, {
+    opacity: 1;
+    max-height: 100px; /* little bit of a magic number :( */
+    overflow: visible;
+}
+
+.reveal-if-active {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: scale(0.8);
+  transition: 0.5s;
+  input[type="radio"]:checked ~ &,
+  input[type="checkbox"]:checked ~ & {
+    opacity: 1;
+    max-height: 100px;
+    overflow: visible;
+    padding: 10px 20px;
+    transform: scale(1);
+  }
+}
